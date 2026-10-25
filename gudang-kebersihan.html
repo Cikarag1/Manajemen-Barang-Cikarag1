@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gudang Alat Kebersihan · Dapur Cikarag 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav class="nav" aria-label="Halaman">
+        <a href="/">Dapur</a>
+        <a href="/gudang-kebersihan" aria-current="page">Alat Kebersihan</a>
+        <a href="/gudang-apd">APD</a>
+    </nav>
+
+    <header class="masthead">
+        <span class="eyebrow">Gudang Alat Kebersihan</span>
+        <h1>Alat <em>Kebersihan</em></h1>
+        <p class="tagline">Kelola daftar dan harga alat kebersihan dapur</p>
+        <div class="stats">
+            <div class="stat"><span class="stat-value" id="statCount">0</span><span class="stat-label">Barang</span></div>
+            <div class="stat"><span class="stat-value" id="statTotal">Rp 0</span><span class="stat-label">Total Nilai</span></div>
+        </div>
+    </header>
+
+    <!-- Form Tambah / Edit Barang -->
+    <div class="card" id="formCard">
+        <h3 id="formTitle">Tambah Barang Baru</h3>
+        <form id="productForm" class="form-group">
+            <!-- Input tersembunyi untuk menyimpan index saat mode edit -->
+            <input type="hidden" id="editIndex" value="">
+            <input type="text" id="newPriceName" placeholder="Nama barang" required>
+            <input type="number" id="newPriceValue" placeholder="Harga (angka saja)" min="0" required>
+            <button type="submit" id="submitBtn">Simpan</button>
+        </form>
+    </div>
+
+    <!-- Kontrol Pencarian & Pengurutan -->
+    <div class="controls">
+        <input type="text" id="searchInput" class="search-box" placeholder="Cari nama barang...">
+
+        <select id="sortInput" class="sort-box">
+            <option value="default">Urutan: Default</option>
+            <option value="cheap">Harga: Murah ke Mahal</option>
+            <option value="expensive">Harga: Mahal ke Murah</option>
+        </select>
+    </div>
+
+    <div class="list-heading"><span>Daftar Barang</span><span>Harga</span></div>
+
+    <!-- Tempat Menampilkan Hasil -->
+    <ul id="productList" class="product-list"></ul>
+
+    <footer>Dapur Cikarag 1</footer>
+
+    <script>
+        window.HALAMAN = {
+            kunciPenyimpanan: "dataKebersihan",
+            barangDefault: [
+            { nama: "Sapu Ijuk", harga: 35000 },
+            { nama: "Alat Pel Lantai", harga: 85000 },
+            { nama: "Cairan Pembersih Lantai 5 L", harga: 120000 },
+            { nama: "Sabun Cuci Piring 5 L", harga: 95000 },
+            { nama: "Kantong Sampah Besar (1 pak)", harga: 40000 }
+        ]
+        };
+    </script>
+    <script src="/app.js"></script>
+</body>
+</html>
