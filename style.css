@@ -1,14 +1,14 @@
 :root {
-    --ivory: #f3f9ff;
-    --paper: #ffffff;
-    --ink: #1e3a5f;
-    --forest: #1e88e5;
+    --ivory: #0b1626;
+    --paper: #12223a;
+    --ink: #e3eefc;
+    --forest: #2f8ff0;
     --forest-soft: #1976d2;
-    --gold: #42a5f5;
-    --gold-soft: #bbdefb;
-    --muted: #6b819b;
-    --line: #e1eefb;
-    --danger: #e53935;
+    --gold: #64b5f6;
+    --gold-soft: #2a4a72;
+    --muted: #8ea6c4;
+    --line: #22385a;
+    --danger: #ff6b6b;
     --serif: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
     --sans: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
@@ -82,7 +82,7 @@ h1 em { color: var(--gold); font-style: normal; }
     background: var(--paper);
     border: 1px solid var(--line);
     border-radius: 16px;
-    box-shadow: 0 16px 40px -20px rgba(30, 136, 229, .3);
+    box-shadow: 0 16px 40px -20px rgba(0, 0, 0, .6);
     animation: muncul .7s .1s ease both;
 }
 .card::before {
@@ -109,13 +109,13 @@ input, select {
     padding: 14px 16px;
     border: 1px solid var(--line);
     border-radius: 10px;
-    background: #fff;
+    background: #0f1d31;
     color: var(--ink);
     font: inherit;
     outline: none;
     transition: border-color .25s, box-shadow .25s;
 }
-input::placeholder { color: #9fb3c8; }
+input::placeholder { color: #6f86a5; }
 input:focus, select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(66, 165, 245, .18); }
 input[type="text"], input[type="number"] { flex: 1; }
 select {
@@ -146,7 +146,7 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
 /* Kontrol pencarian */
 .controls { margin-bottom: 22px; animation: muncul .7s .2s ease both; }
-.search-box { flex: 2; padding-left: 44px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231e88e5' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 16px center; }
+.search-box { flex: 2; padding-left: 44px; background: #0f1d31 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231e88e5' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 16px center; }
 .sort-box { flex: 1; }
 
 /* Daftar barang */
@@ -263,3 +263,14 @@ footer::before { content: ""; display: block; margin-bottom: 10px; color: var(--
     .nav { border-radius: 16px; }
     .nav a { padding: 8px 12px; font-size: 13px; }
 }
+
+.admin-badge {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+@media (max-width: 640px) { .admin-badge { top: 12px; left: 16px; font-size: 12px; } }
